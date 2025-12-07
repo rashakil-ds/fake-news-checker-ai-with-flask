@@ -1,5 +1,6 @@
-
-# Click -> [Fake vs. Real News Classification App with Flask](https://fake-news-checker-ai-with-flask.onrender.com/)
+# Fake vs Real News Classification App
+ 1. [Deployed in Streamlit](https://fake-news-checker-ai.streamlit.app/)
+ 2. [Flask Version: Deployed in Onrender](https://fake-news-checker-ai-with-flask.onrender.com/)
 
 This project implements an end-to-end **text classification pipeline** to classify text as **Fake (0)** or **Real (1)** using traditional Machine Learning techniques and clean NLP preprocessing. It includes dataset exploration, preprocessing, TF-IDF vectorization, multiple model training, evaluation, and a production-ready prediction system with model + vectorizer saving.
 
