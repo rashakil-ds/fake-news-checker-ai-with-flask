@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>Fake vs. Real News Classifier</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
+    <style>
+        body { background-color: #f8fafc; }
+        .container { max-width: 800px; margin-top: 40px; }
+        .card { border-radius: 12px; }
+        textarea { resize: vertical; min-height: 180px; }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title mb-3">Fake vs. Real News Classifier</h2>
+            <p class="text-muted">
+                Paste any news text below. The machine learning model will predict whether it is <strong>Fake News (0)</strong> or
+                <strong>Real News (1)</strong>.
+            </p>
+
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="text" class="form-label">Enter text to classify:</label>
+                    <textarea
+                        class="form-control"
+                        id="text"
+                        name="text"
+                        placeholder="Paste news article here..."
+                    >{{ user_text }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    Make Prediction
+                </button>
+            </form>
+
+            {% if prediction_label %}
+                <hr>
+                <h5>Prediction:</h5>
+                <p class="fs-5">
+                    <strong>{{ prediction_label }}</strong>
+                    {% if probability is not none %}
+                        <span class="text-muted">
+                            Confidence of Real News is = {{ probability }}
+                        </span>
+                    {% endif %}
+                </p>
+            {% endif %}
+
+            <hr>
+            <small class="text-muted">
+                • @Built by Rashedul Alam
+            </small>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
